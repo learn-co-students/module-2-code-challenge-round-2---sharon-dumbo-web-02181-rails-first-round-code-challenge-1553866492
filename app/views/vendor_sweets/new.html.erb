@@ -1,0 +1,16 @@
+2. A user should be able to go and create a new connection between a vendor and a sweet through a new form of `VendorSweet`. The form should include a dropdown to select a vendor and another dropdown to select its sweet.
+
+
+<h1>Create New Vendor & Sweet</h1>
+
+<% if @vendor_sweet.errors.any? %>
+<% @vendor_sweet.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
+<% end %>
+
+ <%= form_for @vendor_sweet do |f| %>
+ <%= f.collection_select(:vendor_id, Vendor.all, :id, :name) %>
+ <%= f.collection_select(:sweet_id, Sweet.all, :id, :name) %>
+ <%= f.submit %>
+ <% end %>

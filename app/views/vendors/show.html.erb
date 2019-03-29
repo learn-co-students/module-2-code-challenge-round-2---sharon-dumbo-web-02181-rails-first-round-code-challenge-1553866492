@@ -1,0 +1,8 @@
+3. The vendor's show page should include the vendor's name (ie. Insomnia Cookies) and a list of the sweets that they sell.
+
+ <h1><%= @vendor.name %></h1>
+<ul>
+  <% @vendor.sweets.each do |sweet| %>
+  <li><%= sweet.name %></li>
+  <% end %>
+</ul>
